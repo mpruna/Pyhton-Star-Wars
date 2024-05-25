@@ -48,14 +48,16 @@ def query_api(url):
     # Remove any leading trailing spaces
     opt = opt.lstrip().rstrip()
     print(" " * (tilde_position - 1) + "**~**")
-
+    selectors=[]
     for record in api_response.json()['results']:
+        selectors.append(record[key])
         if record[key] == opt or record[key] == opt.title():
             for rec_name, rec_value in record.items():
                 print(rec_name, rec_value)
-        else:
-            print("Invalid option")
-            exit()
+                
+    if opt.title() not in selectors:
+        print("Invalid option")
+        exit()
 
     print(" " * (tilde_position - 1) + "**~**")
 
