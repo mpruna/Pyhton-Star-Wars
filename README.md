@@ -2,7 +2,7 @@
 
 | ENV | Version |
 | --- | --- |
-| Python | 3.12.3 |
+| Python | 3.9 |
 | requests | 2.32.2 |
 | tabulate | 0.9.9 |
 
