@@ -50,28 +50,27 @@ def query_api(url):
     print(" " * (tilde_position - 1) + "**~**")
     selectors=[]
     for record in api_response.json()['results']:
-        selectors.append(record[key])
         if record[key] == opt or record[key] == opt.title():
+            selectors.append(record[key])
+            h = []
+            v = []
             for rec_name, rec_value in record.items():
-                print(rec_name, rec_value)
-                
+                h.append(rec_name)
+                v.append(rec_value)
+            table = h
+            headers = v
+            print(tabulate({"Header-Name": table, "Header-Value": headers}, headers="keys"))
+            print("\n")
+
     if opt.title() not in selectors:
         print("Invalid option")
         exit()
 
     print(" " * (tilde_position - 1) + "**~**")
 
-    '''
-    table = element.values()
-    headers = element.keys()
-    print(tabulate({"API-Name": table,  "API-URI": headers}, headers="keys"))
-    print("\n")
-    '''
-
-
 if __name__ == "__main__":
     apis = verity_connection()
-    api_map = {}  
+    api_map = {}
     while True:
         counter = 1
         for name, api in apis.items():
