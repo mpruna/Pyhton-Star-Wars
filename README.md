@@ -13,6 +13,7 @@ Tabulate is a pretty-print library.
 Ref:
 * https://pypi.org/project/tabulate/
 
-Luke Skywalker | Darth Vader
+Star Wars query script:  
+Luke Skywalker | Darth Vader  
 
 ![IMG](Images/Luke_Darth.png)
